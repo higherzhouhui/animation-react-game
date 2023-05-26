@@ -1,0 +1,553 @@
+.container {
+  overflow: auto;
+  .wholeScreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+  }
+  .top {
+    padding: 8px 12px;
+    background-image: url("@/assets/image/waybill/titleBg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      .left {
+        display: flex;
+        align-items: center;
+      }
+      .backBtn {
+        height: 18px;
+      }
+      .currentGame {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        height: 32px;
+        padding: 0 8px 0 2px;
+        margin-left: 12px;
+        position: relative;
+        .logo {
+          width: 28px;
+          height: 28px;
+        }
+        span {
+          display: inline-block;
+          margin: 0 10px 0 4px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+          min-width: 50px;
+        }
+        .arrow {
+          height: 18px;
+        }
+        .optionWrapper {
+          position: absolute;
+          width: 198px;
+          background: #ffffff;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+          border-radius: 10px;
+          left: 0;
+          top: 40px;
+          z-index: 99;
+          padding: 12px;
+          .optionList {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #333333;
+            margin-bottom: 16px;
+            .logo {
+              width: 28px;
+              height: 28px;
+              margin-right: 8px;
+            }
+          }
+          .optionList:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        .desc {
+          .first {
+            font-size: 14px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: right;
+            margin-right: 9px;
+          }
+          .sub {
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #ffffff;
+            transform: scale(0.8);
+            margin-top: 4px;
+            text-align: right;
+          }
+        }
+        .countTimeWrapper {
+          background: #fff;
+          border-radius: 4px;
+          font-size: 20px;
+          font-family: DinNumber;
+          font-weight: bold;
+          color: #333333;
+          padding: 5px 4px;
+        }
+      }
+    }
+    .result {
+      padding: 12px 0;
+      .myTitle {
+        font-size: 14px;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .color {
+        width: 24px;
+        height: 24px;
+        border-radius: 18px;
+        color: #fff;
+        text-align: center;
+        line-height: 24px;
+        margin-right: 12px;
+      }
+      .color:last-child {
+        margin-right: 0;
+      }
+      .allNumber {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: #fff;
+    padding: 6px 12px;
+    .tab {
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+      text-align: center;
+      height: 32px;
+      line-height: 32px;
+    }
+    .activeTab {
+      background: #fc708b;
+      border-radius: 4px;
+      color: #fff;
+    }
+  }
+  .content {
+    padding: 8px 12px 36px 12px;
+    background: #f9f9f9;
+    overflow-y: auto;
+    height: calc(100vh - 214px);
+    .selections {
+      width: 170px;
+      height: 32px;
+      pointer-events: none;
+      opacity: 0;
+      select {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border: none;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+    .fliterComponent {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .playTabs {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        margin-left: 10px;
+      }
+      .playTab {
+        text-align: center;
+        background: #fff;
+        border-radius: 4px;
+        height: 32px;
+        color: #333;
+        font-size: 14px;
+        line-height: 32px;
+      }
+      .playTabActive {
+        background: #fc708b;
+        color: #fff;
+      }
+    }
+    .majorContainer {
+      display: flex;
+      margin-top: 12px;
+      .leftSide {
+        flex: 1;
+        overflow-x: scroll;
+      }
+      .rightSide {
+        width: 94px;
+        min-width: 94px;
+        background: #fff;
+        margin-left: 9px;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 7px;
+        .qtitle {
+          color: #333;
+          font-size: 14px;
+          .qwh {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #bdbdbd;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            line-height: 15px;
+            margin-left: 5px;
+            cursor: pointer;
+          }
+        }
+        .chooseIssue {
+          background: #ffffff;
+          border-radius: 4px;
+          border: 1px solid #e5e5e5;
+          padding: 12px 0;
+          margin-top: 12px;
+          .qtop {
+            color: #333333;
+            font-size: 14px;
+            text-align: center;
+            span {
+              color: #ff1717;
+            }
+          }
+          .qbot {
+            display: flex;
+            margin-top: 4px;
+            align-items: center;
+            justify-content: space-around;
+            .hollow {
+              width: 8px;
+              height: 8px;
+              border: 2px solid #ff1717;
+              border-radius: 50%;
+            }
+            .solid {
+              width: 8px;
+              height: 8px;
+              background: #ff1717;
+              border-radius: 50%;
+            }
+            .line {
+              width: 8px;
+              height: 2px;
+              background: #ff1717;
+              transform: rotate(-45deg);
+            }
+            .hotherColor {
+              border-color: #1c86ff;
+            }
+            .otherColor {
+              background: #1c86ff;
+            }
+          }
+        }
+        .chooseActive {
+          border-color: #ff1717;
+        }
+        .proportion {
+          margin-top: 21px;
+          .proTitle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+          }
+          .progress {
+            width: 100%;
+            height: 8px;
+            position: relative;
+            background: #1c86ff;
+            border-radius: 0px 2px 2px 0px;
+            .big {
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              z-index: 9;
+              background: #ff1717;
+              border-radius: 2px 0 0 2px;
+            }
+          }
+        }
+      }
+    }
+    .placeBet {
+      background: #fc708b;
+      border-radius: 4px;
+      width: 60%;
+      margin: 12px auto 0 auto;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      line-height: 38px;
+    }
+  }
+  .wrapper {
+    padding: 4px;
+    border-radius: 4px;
+    background: #fff;
+    margin-bottom: 8px;
+    .wtitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+      padding: 0 9px;
+      .wleft {
+        font-size: 14px;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #333333;
+      }
+      .wright {
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #666666;
+        span {
+          color: #ff3838;
+          font-size: 16px;
+        }
+      }
+    }
+    .wdesc {
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      padding: 0 9px;
+      margin: 6px 0 8px 0;
+    }
+  }
+  .wrapper:last-child {
+    margin-bottom: 0;
+  }
+  .wayBody {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+    }
+    .box {
+      width: 30px;
+      height: 30px;
+      border-right: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &.red::before,
+      &.blue::before {
+        content: "大";
+        min-width: 24px;
+        min-height: 24px;
+        width: 24px;
+        height: 24px;
+        color: #ff1717;
+        display: inline-block;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 24px;
+      }
+      &.blue::before {
+        color: #1c86ff;
+        content: "小";
+      }
+      .issue {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+      }
+
+      &:hover {
+        .issue {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .majorResult {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+    }
+    .box {
+      width: 16px;
+      height: 16px;
+      border-right: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &.red::before,
+      &.blue::before {
+        content: "";
+        min-width: 8px;
+        min-height: 8px;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #ff1717;
+        display: inline-block;
+        border-radius: 100%;
+      }
+      &.blue::before {
+        border-color: #1c86ff;
+      }
+      .issue {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+      }
+
+      &:hover {
+        .issue {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .majorResultCircle {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+    }
+    .box {
+      width: 16px;
+      height: 16px;
+      border-right: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &.red::before,
+      &.blue::before {
+        content: "";
+        min-width: 8px;
+        min-height: 8px;
+        width: 8px;
+        height: 8px;
+        background: #ff1717;
+        display: inline-block;
+        border-radius: 100%;
+      }
+      &.blue::before {
+        background: #1c86ff;
+      }
+      .issue {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+      }
+
+      &:hover {
+        .issue {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .majorResultLine {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+    }
+    .box {
+      width: 16px;
+      height: 16px;
+      border-right: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &.red::before,
+      &.blue::before {
+        content: "";
+        min-width: 8px;
+        min-height: 2px;
+        width: 8px;
+        height: 2px;
+        background: #ff1717;
+        display: inline-block;
+        transform: rotate(-45deg);
+      }
+      &.blue::before {
+        background: #1c86ff;
+      }
+      .issue {
+        opacity: 0;
+        position: absolute;
+        top: 30px;
+      }
+
+      &:hover {
+        .issue {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

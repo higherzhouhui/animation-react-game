@@ -1,0 +1,239 @@
+.gameBody {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+}
+
+.table {
+  background: url(../../assets/image/jsks/background/game-bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.leftTop {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  display: flex;
+  align-items: end;
+  z-index: 11;
+  .box {
+    background: rgba($color: #fff, $alpha: 0.2);
+    display: flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 100px;
+    padding: 0 1px;
+    color: #fff;
+    margin-right: 12px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    .text {
+      padding: 0 12px 0 8px;
+    }
+  }
+}
+
+.iconClock {
+  width: 43px;
+  height: 47px;
+  position: relative;
+  .clockAni {
+    // animation: clock 2s infinite linear;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .number {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 18px 0 13px;
+    text-align: center;
+    line-height: 16px;
+    color: #a82323;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+.rightTop {
+  @extend .disFlex;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+  .result {
+    .leftIcon {
+      margin-right: 6px;
+    }
+    @extend .disFlex;
+    padding: 0 8px;
+    height: 34px;
+    box-shadow: inset 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
+    border-radius: 1000px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 13px;
+    .icon {
+      margin-right: 14px;
+    }
+    .iconPodium {
+      margin-right: 5px;
+      min-width: 16px;
+    }
+  }
+}
+.ftGrid {
+  grid-template-columns: repeat(4, 28px) !important;
+  span {
+    min-width: unset !important;
+  }
+}
+
+.tabelGrid {
+  @extend .disFlexc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  .grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10000px;
+    padding: 2px;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 138fr 57fr 57fr 57fr 57fr 57fr 138fr;
+    .box {
+      border-radius: 4px;
+      background-size: 100% 100%;
+      height: 100%;
+      @extend .disFlexs;
+      justify-content: space-between;
+      padding: 4px 0;
+      color: #fff;
+      position: relative;
+
+      .odds1 {
+        position: absolute;
+        height: 100%;
+        padding: 20px 0;
+        display: flex;
+        align-items: flex-end;
+        top: 0;
+      }
+      &:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &:nth-child(2) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &:nth-child(3) {
+        grid-column: 7/8;
+        grid-row: 1/2;
+      }
+      &:nth-child(4) {
+        grid-column: 7/8;
+        grid-row: 2/3;
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        .odds1 {
+          margin-left: 28%;
+        }
+        background-image: url("../../assets/image/pk10/background/game-select.png");
+        &.selected {
+          background-image: url("../../assets/image/pk10/background/game-selected.png");
+        }
+      }
+      &:nth-child(2) {
+        transform: rotateX(180deg);
+        .text {
+          transform: rotateX(180deg);
+        }
+      }
+      &:nth-child(3) {
+        transform: rotateY(180deg);
+        .text {
+          transform: rotateY(180deg);
+        }
+      }
+      &:nth-child(4) {
+        transform: rotateY(180deg) rotateX(180deg);
+        .text {
+          transform: rotateY(180deg) rotateX(180deg);
+        }
+      }
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11),
+      &:nth-child(12),
+      &:nth-child(13),
+      &:nth-child(14) {
+        background-image: url("../../assets/image/pk10/background/game-select2.png");
+        &.selected {
+          background-image: url("../../assets/image/pk10/background/game-selected2.png");
+        }
+      }
+    }
+  }
+  .ballGrid {
+    grid-template-columns: repeat(4, 24px);
+    span {
+      min-width: unset !important;
+      max-width: 24px !important;
+    }
+  }
+  [data-layout="8"].ballGrid {
+    grid-template-columns: repeat(4, 18px);
+    span {
+      max-width: 18px !important;
+      min-width: 18px !important;
+      max-height: 18px !important;
+      min-height: 18px !important;
+    }
+  }
+}
+
+.leftArea {
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  z-index: 11;
+  .box {
+    margin-top: 10px;
+  }
+}
+
+.rightBottom {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  box-shadow: inset 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
+  height: 40px;
+  border-radius: 1000px;
+  z-index: 11;
+  padding: 0 10px;
+}
+
+.gameIcon {
+  margin-bottom: 4px;
+}

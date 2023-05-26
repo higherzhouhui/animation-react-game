@@ -1,0 +1,45 @@
+.prev {
+  @extend .disFlex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 4px;
+  img {
+    max-width: 25px;
+    width: 100%;
+  }
+}
+
+.gameContent {
+  position: relative;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.tabel {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 8px;
+  .tabelBox {
+    border: 1px solid rgba($color: #fff, $alpha: 0.5);
+    border-radius: 4px;
+    @extend .disFlexs;
+    justify-content: center;
+    &.active {
+      border-color: #36e9dc;
+    }
+    .iconBall {
+      margin-bottom: 10px;
+    }
+    .text {
+      font-size: 18px;
+      margin-bottom: 19px;
+      color: #fff;
+    }
+    .odds {
+      color: rgba($color: #fff, $alpha: 0.7);
+      font-size: 14px;
+    }
+  }
+}

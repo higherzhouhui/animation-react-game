@@ -1,0 +1,39 @@
+.recingTab {
+  padding: 0 12px;
+  height: 100%;
+  .adm-tabs-header-mask {
+    display: none;
+  }
+  .adm-tabs-header {
+    border-bottom: 0;
+  }
+  .adm-tabs-tab-wrapper {
+    padding: 0;
+  }
+  .adm-tabs-tab {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: rgba($color: #fff, $alpha: 0.5);
+    padding: 0;
+    line-height: 36px;
+  }
+  .adm-tabs-tab-list {
+    background: rgba($color: #fff, $alpha: 0.1);
+    border-radius: 4px;
+  }
+  .adm-tabs-tab-active {
+    color: #fff;
+  }
+  .adm-tabs-tab-line {
+    height: 34px;
+    bottom: 1px;
+    background: rgba($color: #fff, $alpha: 0.5);
+    border-radius: 4px;
+  }
+  .adm-tabs-content {
+    height: calc(100% - 36px);
+    padding: 10px 0 28px;
+  }
+}

@@ -1,0 +1,49 @@
+.Rule {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.overlayContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 370px;
+  height: min(290px, 80vh);
+  padding: 10px;
+  box-shadow: inset 0 0 17px 0 rgba($color: #fff, $alpha: 0.7);
+  border-radius: 8px;
+  .content {
+    background: #36373c;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    @extend .disFlexs;
+    align-items: stretch;
+    .title {
+      font-size: 15px;
+      line-height: 50px;
+      text-align: center;
+      color: rgba($color: #fff, $alpha: 0.85);
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+    }
+    .text {
+      flex: 1;
+      overflow-y: scroll;
+      color: rgba($color: #fff, $alpha: 0.45);
+      padding: 12px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

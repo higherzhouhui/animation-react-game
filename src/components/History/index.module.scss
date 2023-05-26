@@ -1,0 +1,405 @@
+.History {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.overlayContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 370px;
+  height: min(290px, 80vh);
+  padding: 10px;
+  box-shadow: inset 0 0 17px 0 rgba($color: #fff, $alpha: 0.7);
+  border-radius: 8px;
+  .content {
+    background: #36373c;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    @extend .disFlexs;
+    align-items: stretch;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.box1 {
+  background: #4e4f57;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  padding: 6px 8px;
+  color: #fff;
+  .qihao {
+    margin-bottom: 12px;
+  }
+}
+
+.ftResult {
+  grid-template-columns: repeat(4, 26px) !important;
+  span {
+    max-width: 22px !important;
+    min-width: 22px !important;
+    max-height: 22px !important;
+    min-height: 22px !important;
+  }
+}
+.myHisBody {
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  .nomore {
+    text-align: center;
+    color: #666;
+  }
+  .list-body {
+    .list {
+      margin-bottom: 8px;
+      padding: 12px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      align-items: center;
+      background-size: 100% 100%;
+      justify-items: center;
+      background: #4e4f57;
+      border-radius: 4px;
+      .icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        dt {
+          font-size: 13px;
+          font-weight: bold;
+          color: #fff;
+        }
+
+        dd {
+          color: #fff;
+          font-size: 13px;
+        }
+      }
+
+      .myHisTop2 {
+        display: flex;
+      }
+
+      .myHisTop {
+        @extend .disFlexs;
+        height: 34px;
+        justify-content: space-between !important;
+        // border-right: 1px solid rgba($color: #000000, $alpha: 0.05);
+        width: 33vw;
+
+        dt {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+          white-space: nowrap;
+          font-weight: 400;
+        }
+
+        dd {
+          font-size: 14px;
+          color: #fff;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 90%;
+          text-align: center;
+        }
+      }
+
+      .myHisTop2 {
+        position: relative;
+        .winlose {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        img {
+          width: 50px;
+        }
+
+        justify-content: end;
+
+        span {
+          margin-left: 4px;
+          font-size: 12px;
+          color: rgba($color: #fff, $alpha: 0.8);
+          position: relative;
+          z-index: 1;
+
+          &.num {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .statusIcon {
+        width: 50px;
+        height: 50px;
+
+        .jStatus {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .rightIcon {
+        position: absolute;
+        right: 0px;
+        bottom: 15px;
+      }
+    }
+  }
+
+  .list-gift {
+    flex-grow: 1;
+    overflow: auto;
+
+    .list {
+      padding: 12px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      // height: 75px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-around;
+      // border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+      border-radius: 2px;
+      background-size: 100% 100%;
+      opacity: 0.96;
+      position: relative;
+
+      dt {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+
+        span {
+          color: #fff;
+        }
+      }
+
+      dd {
+        align-items: center;
+      }
+
+      span {
+        // margin-right: 10px;
+      }
+
+      .race1m {
+        i {
+          margin-top: 10px;
+        }
+        img {
+          margin-top: 10px;
+        }
+      }
+
+      .disDD {
+        display: flex;
+        gap: 5px;
+        margin: 3px 0;
+
+        i {
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #ff9090;
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          color: #fff;
+          font-style: normal;
+
+          &.jsks {
+            background: unset;
+          }
+        }
+
+        .redCard {
+          background: #ff9090 !important;
+        }
+
+        .greenCard {
+          background: #6cbb77 !important;
+        }
+
+        .blueCard {
+          background: #8479fb !important;
+        }
+      }
+
+      .disDD2 {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        align-items: center;
+      }
+
+      .disDD3 {
+        i {
+          // background: url(../../../assets/image/live/number-select.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+
+      .rightIcon {
+        position: absolute;
+        right: 0px;
+        bottom: 20px;
+      }
+    }
+  }
+}
+
+.detail2BodyStyle_title_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .winLoseIcon {
+    position: absolute;
+    right: 30px;
+    bottom: -30px;
+    z-index: 2;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  font-size: 13px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  div {
+    margin-bottom: 8px;
+  }
+
+  .detail2BodyStyle_q {
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 5px;
+  }
+}
+
+.glist-body {
+  background: #4e4f57;
+  border-radius: 4px;
+  position: relative;
+  .glist {
+    height: 44px;
+    padding: 0 8px;
+    @extend .disFlexb;
+    .content {
+      background: #4e4f57;
+      color: #fff;
+      @extend .disFlex;
+      align-items: flex-end;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .label {
+      color: rgba($color: #fff, $alpha: 0.45);
+      white-space: nowrap;
+    }
+  }
+}
+
+.back {
+  position: absolute;
+  height: 34px;
+  left: 10px;
+  top: 10px;
+  @extend .disFlexc;
+  padding: 0 10px;
+  z-index: 9;
+  width: calc(100% - 20px);
+  background: #36373c;
+  color: #fff;
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    height: 100%;
+    @extend .disFlexc;
+  }
+}
+
+.contentList {
+  padding: 10px;
+  overflow-y: scroll;
+  height: 237px;
+}
+
+.ballIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+.numIcon {
+  color: #fff;
+  font-size: 12px;
+  box-shadow: inset 0 0 5px 0 rgba($color: #fff, $alpha: 0.5);
+  @extend .disFlexc;
+  border-radius: 100%;
+  margin-left: 1px;
+}
+
+.YuxxIcon {
+  margin-left: 2px;
+  border-radius: 4px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.redBall {
+  background: rgba($color: #ff2d2d, $alpha: 0.5);
+}
+.greenBall {
+  background: rgba($color: #0ace24, $alpha: 0.5);
+}
+.blueBall {
+  background: rgba($color: #0a20e2, $alpha: 0.5);
+}
+.whiteFont {
+  color: #fff;
+  margin: 0 2px;
+  @extend .disFlexc;
+}

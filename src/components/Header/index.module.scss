@@ -1,0 +1,89 @@
+.gameHead {
+  @extend .disFlexb;
+  padding: 0 12px;
+  align-items: center;
+  .left {
+    @extend .disFlex;
+    .iconRule {
+      margin-right: 7px;
+    }
+    .iconClock {
+      width: 33px;
+      height: 34px;
+      position: relative;
+      .clockAni {
+        // animation: clock 2s infinite linear;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .box {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 18px 0 7px;
+        text-align: center;
+        line-height: 16px;
+        color: #a82323;
+        font-size: 13px;
+        width: 100%;
+      }
+    }
+    @keyframes clock {
+      0% {
+        transform: translateY(0);
+      }
+      10% {
+        transform: translateY(-1px);
+      }
+      20% {
+        transform: translateY(1px);
+      }
+      30% {
+        transform: translateY(0);
+      }
+      35% {
+        transform: rotate(0);
+      }
+      40% {
+        transform: rotate(-5deg);
+      }
+      45% {
+        transform: rotate(5deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+      55% {
+        transform: rotate(5deg);
+      }
+      60% {
+        transform: rotate(-5deg);
+      }
+      65% {
+        transform: rotate(5deg);
+      }
+      70% {
+        transform: rotate(0);
+      }
+    }
+  }
+  .right {
+    @extend .disFlex;
+    padding: 0 8px;
+    height: 30px;
+    background: rgba($color: #fff, $alpha: 0.15);
+    box-shadow: inset 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
+    border-radius: 1000px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 14px;
+    }
+    .iconPodium {
+      margin-right: 5px;
+      min-width: 16px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.leftBottom {
+  @extend .disFlex;
+  position: absolute;
+  height: 40px;
+  left: 20px;
+  bottom: 20px;
+  box-shadow: inset 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 1000px;
+  color: #fff;
+  z-index: 11;
+  .icon {
+    margin: 0 8px;
+    &.transAni {
+      animation: trans 1s infinite linear;
+      @keyframes trans {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+  .recharge {
+    height: 24px;
+    border: 1px solid rgba($color: #fff, $alpha: 0.8);
+    padding: 0 14px;
+    @extend .disFlexc;
+    margin-left: 8px;
+    border-radius: 1000px;
+    color: #fff;
+    background: transparent;
+    font-size: 14px;
+  }
+}

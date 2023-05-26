@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 绝对路径引入图标文件  -->
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <title>FBS</title>
+    <style>
+      .loadingPng {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        object-fit: contain;
+      }
+      html {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 容器节点 -->
+    <div id="root"></div>
+  </body>
+  <script>
+    function postMsg(obj) {
+      window.$bus.emit("ctrl", obj);
+    }
+    //调用窗口控制事件
+    // postMsg({ money: "5", times: "1", type: "follow", gameList: '["THREE_WHITE_ONE_RED"]' }); //打开窗口，番摊跟投
+    // postMsg({ money: "5", type: "follow", num: "小", lotteryType: "HE", lotteryName: "tz" }); //骰宝跟投
+    //   postMsg({ money: "500", type: "follow", num: "1", lotteryType: "GJ", lotteryName: "race1m" }); //赛车跟投
+    /**
+     * 游戏跟投
+     * @param money 金额
+     * @param type 写死"follow"
+     * @param num 跟投im消息  payList里面的num
+     * @param lotteryType 跟投im消息  payList里面的type
+     * @param lotteryName 赛车:race1m,骰宝:tz
+     * @returns
+     */
+    // setTimeout(() => {
+    //   console.log(123);
+    //   postMsg({ type: "follow", money: 5, times: 1, lotteryType: "GYHDXDS", lotteryName: "race1m", num: "单" });
+    // }, 500);
+
+    //获取余额事件
+    //postMsg({type:"getBalance"})
+  </script>
+</html>

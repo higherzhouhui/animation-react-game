@@ -1,0 +1,33 @@
+.ballBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  grid-column-gap: 4px;
+
+  .span {
+    width: calc(21 / 375) * 100vw;
+    height: calc(21 / 375) * 100vw;
+    min-width: calc(21 / 375) * 100vw;
+    max-width: 23px;
+    max-height: 23px;
+    display: inline-block;
+    background: url(../../../../assets/image/wball.png) no-repeat;
+    background-size: contain;
+
+    &.red {
+      background: url(../../../../assets/image/rball.png) no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+[data-layout="4"].ballBox {
+  grid-column-gap: 0;
+  .span {
+    width: calc(25 / 375) * 100vw;
+    height: calc(25 / 375) * 100vw;
+    min-width: calc(25 / 375) * 100vw;
+    max-width: 28px;
+    max-height: 28px;
+  }
+}

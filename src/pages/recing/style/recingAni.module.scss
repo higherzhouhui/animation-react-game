@@ -1,0 +1,150 @@
+.aniBody {
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  width: 100%;
+  height: 312px;
+  padding: 8px 0;
+  z-index: 999;
+}
+
+.trackBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  background: url(../../../assets/image/background/trackBg.png);
+  background-size: 100vw 100%;
+  background-position: -100vw 0;
+  pointer-events: none;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../../../assets/image/background/track.png) no-repeat;
+    z-index: 999;
+  }
+}
+
+.trackBgAni {
+  animation: run 4s linear infinite;
+  @keyframes run {
+    from {
+      background-position: -100vw 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+}
+
+.block {
+  background: rgba($color: #000000, $alpha: 0.7) url(../../../assets/image/background/terminal.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position: -30px 0;
+}
+.showTer {
+  background-position: 32px 0;
+  transition: 0.5s;
+}
+
+.carList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 15px;
+  .car {
+    margin-bottom: 8px;
+    margin-top: 4px;
+    transition: 1s linear;
+    .fire {
+      position: absolute;
+      right: -14px;
+      bottom: 3px;
+      animation: 3.5s showFire ease-in-out;
+      opacity: 0;
+    }
+    @keyframes showFire {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.centerDownTime {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.gameEnd {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: scale(1) translate(-50%, -50%);
+  color: #fff;
+  background: rgba($color: #000000, $alpha: 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.platForm {
+  background: url(../../../assets/image/background/platFormBg.png);
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+  .car {
+    position: relative;
+  }
+  .rank {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -74px;
+  }
+  .car:nth-child(1) {
+    position: absolute;
+    bottom: 17px;
+    left: calc(50vw - 66px);
+    .rank {
+      top: -98px;
+    }
+  }
+  .car:nth-child(2) {
+    position: absolute;
+    bottom: 104px;
+    left: 30px;
+  }
+  .car:nth-child(3) {
+    position: absolute;
+    bottom: 104px;
+    right: 30px;
+  }
+}
